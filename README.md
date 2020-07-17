@@ -8,17 +8,14 @@ Python wrapper over the HQ Core REST API. Useful for testing.
     hq = HQCore(host="127.0.0.1",port=8080)
 
     print("List Devices...")
-    res = hq.get_devices()
-    pprint(res)
+    print(hq.get_devices())
    
     print("Adding device...")
-    res= hq.add_device("Twitter Scraper", "Adam Musciano","description is here")
-    device_id= res["id"]
-    pprint(res)
+    device= hq.add_device("device_name", "owner","description of the device")
+    device_id= device["id"]
     
     print("Adding cluster...")
-    res= hq.add_cluster("Tweets Analysis","description is here")
-    cluster_id= res["id"]
-    pprint(res)
+    cluster= hq.add_cluster("cluster_name","Description of the cluster")
+    cluster_id= cluster["id"]
     
 ```
